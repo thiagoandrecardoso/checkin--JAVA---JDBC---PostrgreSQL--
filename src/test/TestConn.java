@@ -1,16 +1,14 @@
 package test;
 
-import DAO.LinhaDAO;
-import model.Linha;
+import DAO.PassageiroDAO;
+import model.Passageiro;
 
 public class TestConn {
 
     public static void main(String[] args) {
-        Linha linha = null;
-        LinhaDAO linhaDAO = new LinhaDAO();
-
-        linha = linhaDAO.getLineById(1);
-
-        System.out.println(linha);
+        Passageiro passageiro = new Passageiro();
+        PassageiroDAO passageiroDAO = new PassageiroDAO();
+        passageiro = passageiroDAO.getPassengerById(51);
+        System.out.println(passageiro);
     }
 }
