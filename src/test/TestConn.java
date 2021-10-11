@@ -1,14 +1,18 @@
 package test;
 
+import DAO.BilheteDAO;
 import DAO.PassageiroDAO;
+import model.Bilhete;
 import model.Passageiro;
 
 public class TestConn {
 
     public static void main(String[] args) {
-        Passageiro passageiro = new Passageiro();
-        PassageiroDAO passageiroDAO = new PassageiroDAO();
-        passageiro = passageiroDAO.getPassengerById(51);
-        System.out.println(passageiro);
+        Bilhete bilhete = new Bilhete();
+
+        BilheteDAO bilheteDAO = new BilheteDAO();
+        bilhete = bilheteDAO.getTicketByCode("DRYMOD");
+
+        bilheteDAO.uodateByCode(bilhete, "21");
     }
 }
