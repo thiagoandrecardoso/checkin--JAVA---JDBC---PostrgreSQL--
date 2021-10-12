@@ -13,12 +13,11 @@ import java.time.LocalDateTime;
 
 public class BilheteDAO {
     private final String SELECT_BY_CODE;
+    private final String UPDATE_BY_CODE;
 
     {
         SELECT_BY_CODE = "SELECT CODIGO,ASSENTO,id_passageiro,id_linha,assento_marcado_em FROM bilhete WHERE CODIGO=?";
     }
-
-    private final String UPDATE_BY_CODE;
 
     {
         UPDATE_BY_CODE = "UPDATE bilhete SET assento = ?, assento_marcado_em = ? WHERE codigo = ?";

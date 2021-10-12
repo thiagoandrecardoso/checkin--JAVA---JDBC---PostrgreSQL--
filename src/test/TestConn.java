@@ -1,9 +1,7 @@
 package test;
 
 import DAO.BilheteDAO;
-import DAO.PassageiroDAO;
 import model.Bilhete;
-import model.Passageiro;
 
 public class TestConn {
 

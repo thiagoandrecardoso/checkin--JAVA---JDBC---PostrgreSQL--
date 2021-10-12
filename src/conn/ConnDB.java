@@ -22,7 +22,7 @@ public class ConnDB {
         return connection;
     }
 
-    public static void CloseConn(Connection connection){
+    public static void CloseConn(Connection connection) {
         if (connection != null) {
             try {
                 connection.close();
@@ -32,8 +32,8 @@ public class ConnDB {
         }
     }
 
-    public static void CLosePreparedStatement(PreparedStatement preparedStatement){
-        if (preparedStatement != null){
+    public static void CLosePreparedStatement(PreparedStatement preparedStatement) {
+        if (preparedStatement != null) {
             try {
                 preparedStatement.close();
             } catch (SQLException e) {
@@ -42,8 +42,8 @@ public class ConnDB {
         }
     }
 
-    public static void CloseResultSet(ResultSet resultSet){
-        if (resultSet != null){
+    public static void CloseResultSet(ResultSet resultSet) {
+        if (resultSet != null) {
             try {
                 resultSet.close();
             } catch (SQLException e) {
