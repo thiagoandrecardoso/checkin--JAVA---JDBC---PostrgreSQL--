@@ -27,7 +27,6 @@ public abstract class TelaInicialForm extends JFrame {
         btnChekin.addActionListener(this::abrirTelaRealizarCHekin);
     }
 
-
     public JPanel getForm() {
         if (jPanel == null) {
             jPanel = new JPanel(new GridLayout(1, 1));
