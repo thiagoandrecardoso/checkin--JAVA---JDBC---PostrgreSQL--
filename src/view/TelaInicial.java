@@ -4,7 +4,6 @@ import DAO.BilheteDAO;
 import model.Bilhete;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +18,13 @@ public class TelaInicial extends TelaInicialForm {
         BilheteDAO bilheteDAO = new BilheteDAO();
         Bilhete bilhete = bilheteDAO.getTicketByCode(codigoBilhete);
         System.out.println(bilhete);
+
+        SwingUtilities.invokeLater(() -> {
+            TelaInfoBilhete telaInfoBilhete = new TelaInfoBilhete(bilhete);
+            telaInfoBilhete.setVisible(true);
+        });
+
+
     }
 
     @Override
@@ -27,7 +33,7 @@ public class TelaInicial extends TelaInicialForm {
             if (cbCheckin.isSelected()) {
                 txtCheckin.setEditable(true);
                 txtCheckin.setForeground(Color.red);
-                txtCheckin.setBorder(new LineBorder(Color.red,1));
+                txtCheckin.setBorder(new LineBorder(Color.red, 1));
                 txtCheckin.setText("Informe o número do bilhete!");
             }
         });
@@ -38,8 +44,8 @@ public class TelaInicial extends TelaInicialForm {
         txtCheckin.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (txtCheckin.getText().trim().equals("Informe o número do bilhete!")){
-                    txtCheckin.setBorder(new LineBorder(Color.green,1));
+                if (txtCheckin.getText().trim().equals("Informe o número do bilhete!")) {
+                    txtCheckin.setBorder(new LineBorder(Color.green, 1));
                     txtCheckin.setText("");
                     txtCheckin.setForeground(Color.black);
                 }
