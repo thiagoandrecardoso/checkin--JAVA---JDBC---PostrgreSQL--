@@ -13,7 +13,7 @@
 
 - [X] O sistema exibe a tela inicial uma opção "realizar cheking";
 - [X] O usuário seleciona a opção "realizar cheking" no sistema;
-- [ ] O sistema solicita o código localizador do bilhete;
+- [X] O sistema solicita o código localizador do bilhete;
 - [ ] O usuário informa o código localizador e seleciona "próximo";
 - [ ] O sistema locazila o bilhete;
 - [ ] 0 sistema exibe as informações do bilhete, como origem, destino, hora prevista do embarque, hora prevista da
