@@ -1,7 +1,7 @@
 package model;
 
 public class Passageiro {
-    private int id;
+    private Integer id;
     private String nome;
     private String cpf;
     private String telefone_contato;
@@ -10,7 +10,7 @@ public class Passageiro {
     public Passageiro() {
     }
 
-    public Passageiro(int id, String nome, String cpf, String telefone_contato, String email) {
+    public Passageiro(Integer id, String nome, String cpf, String telefone_contato, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -18,11 +18,11 @@ public class Passageiro {
         this.email = email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
