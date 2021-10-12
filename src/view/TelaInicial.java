@@ -1,14 +1,18 @@
 package view;
 
+import DAO.BilheteDAO;
+import model.Bilhete;
+
 import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class TelaInicial extends TelaInicialForm {
 
     @Override
-    protected void btnActionProximo(ActionEvent ev) {
-
+    protected void btnProximoLocalizaBilhete(ActionEvent ev) {
+        String codigoBilhete = txtCheckin.getText();
+        BilheteDAO bilheteDAO = new BilheteDAO();
+        Bilhete bilhete = bilheteDAO.getTicketByCode(codigoBilhete);
+        System.out.println(bilhete);
     }
 
     @Override

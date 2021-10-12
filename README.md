@@ -12,7 +12,7 @@
 ### Fluxo principal:
 
 - [X] O sistema exibe a tela inicial uma opção "realizar cheking";
-- [ ] O usuário seleciona a opção "realizar cheking" no sistema;
+- [X] O usuário seleciona a opção "realizar cheking" no sistema;
 - [ ] O sistema solicita o código localizador do bilhete;
 - [ ] O usuário informa o código localizador e seleciona "próximo";
 - [ ] O sistema locazila o bilhete;

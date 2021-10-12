@@ -24,11 +24,11 @@ public abstract class TelaInicialForm extends JFrame {
         event();
     }
 
-    protected abstract void btnActionProximo (ActionEvent ev);
+    protected abstract void btnProximoLocalizaBilhete(ActionEvent ev);
     protected abstract void adicionarEscutaCheckBox();
 
     private void event() {
-        btnProximo.addActionListener(this::btnActionProximo);
+        btnProximo.addActionListener(this::btnProximoLocalizaBilhete);
         adicionarEscutaCheckBox();
     }
 
