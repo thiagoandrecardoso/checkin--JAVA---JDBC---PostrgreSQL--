@@ -3,7 +3,13 @@ package view;
 import DAO.BilheteDAO;
 import model.Bilhete;
 
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class TelaInicial extends TelaInicialForm {
 
@@ -20,7 +26,24 @@ public class TelaInicial extends TelaInicialForm {
         cbCheckin.addItemListener(e -> {
             if (cbCheckin.isSelected()) {
                 txtCheckin.setEditable(true);
-                txtCheckin.requestFocusInWindow();
+                txtCheckin.setForeground(Color.red);
+                txtCheckin.setBorder(new LineBorder(Color.red,1));
+                txtCheckin.setText("Informe o número do bilhete!");
+            }
+        });
+    }
+
+    @Override
+    protected void adicionaEscutaTxtCheckin() {
+        txtCheckin.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtCheckin.getText().trim().equals("Informe o número do bilhete!")){
+                    txtCheckin.setBorder(new LineBorder(Color.green,1));
+                    txtCheckin.setText("");
+                    txtCheckin.setForeground(Color.black);
+                }
+                super.focusGained(e);
             }
         });
     }

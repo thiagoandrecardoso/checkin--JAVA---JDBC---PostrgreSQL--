@@ -26,10 +26,12 @@ public abstract class TelaInicialForm extends JFrame {
 
     protected abstract void btnProximoLocalizaBilhete(ActionEvent ev);
     protected abstract void adicionarEscutaCheckBox();
+    protected abstract void adicionaEscutaTxtCheckin();
 
     private void event() {
         btnProximo.addActionListener(this::btnProximoLocalizaBilhete);
         adicionarEscutaCheckBox();
+        adicionaEscutaTxtCheckin();
     }
 
     public JPanel getForm() {
