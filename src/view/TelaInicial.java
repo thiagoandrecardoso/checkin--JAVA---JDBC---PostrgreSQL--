@@ -7,16 +7,16 @@ import java.awt.event.ItemListener;
 public class TelaInicial extends TelaInicialForm {
 
     @Override
-    protected void abrirTelaRealizarCHekin(ActionEvent ev) {
+    protected void btnActionProximo(ActionEvent ev) {
 
     }
 
     @Override
     protected void adicionarEscutaCheckBox() {
-        cbCheckin.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (cbCheckin.isSelected()) txtCheckin.setEditable(true);
+        cbCheckin.addItemListener(e -> {
+            if (cbCheckin.isSelected()) {
+                txtCheckin.setEditable(true);
+                txtCheckin.requestFocusInWindow();
             }
         });
     }
