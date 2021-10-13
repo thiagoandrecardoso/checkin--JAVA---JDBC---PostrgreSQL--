@@ -17,6 +17,7 @@ public class TelaInfoBilheteForm extends JFrame {
     protected JLabel jLabelHoraPrevistaPartida;
     protected JLabel jLabelHoraRelogioParede;
 
+    protected JPanel jPanelPassageiro;
     protected JTextField txtNome;
     protected JTextField txtCpf;
     protected JButton btnAtualizarDadosPessoais;
@@ -36,6 +37,7 @@ public class TelaInfoBilheteForm extends JFrame {
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);
         this.getContentPane().add(getBilheteForm(), BorderLayout.CENTER);
+        this.getContentPane().add(getPassageiroForm(), BorderLayout.PAGE_END);
         this.setResizable(false);
     }
 
@@ -66,5 +68,23 @@ public class TelaInfoBilheteForm extends JFrame {
             jPanelInfoBilhete.setBorder(BorderFactory.createEmptyBorder(0, 20, 10, 0));
         }
         return jPanelInfoBilhete;
+    }
+
+    public JPanel getPassageiroForm(){
+        if (jPanelPassageiro == null){
+            jPanelPassageiro = new JPanel(new GridLayout(2, 2, 10, 5));
+            txtNome = new JTextField(bilhete.getPassageiro().getNome());
+            txtCpf = new JTextField(bilhete.getPassageiro().getCpf());
+            btnAtualizarDadosPessoais = new JButton("Editar");
+            btnProximo = new JButton("Próximo");
+
+            jPanelPassageiro.add(txtNome);
+            jPanelPassageiro.add(txtCpf);
+            jPanelPassageiro.add(btnAtualizarDadosPessoais);
+            jPanelPassageiro.add(btnProximo);
+
+            jPanelPassageiro.setBorder(BorderFactory.createEmptyBorder(0, 20, 10, 20));
+        }
+        return jPanelPassageiro;
     }
 }
