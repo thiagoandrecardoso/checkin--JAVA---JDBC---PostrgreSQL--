@@ -30,3 +30,12 @@
 - [ ] O sistema marca o assento para esse localizador do bilhete;
 - [ ] O sistema exibe a mensagem "Cheking realizado com sucesso";
 - [ ] O sistema volta para a tela inicial.
+
+### Alguns código de bilhete para teste
+
+- AFOXLC
+- LEJUMN
+- EADKKP
+- HLOKPG
+- KQRVGO
+- QBUVEY

@@ -4,9 +4,10 @@ import model.Bilhete;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.time.LocalTime;
 
-public class TelaInfoBilheteForm extends JFrame {
+public abstract  class TelaInfoBilheteForm extends JFrame {
     protected JPanel jPanelCAbecalho;
     protected JLabel jLabelCabecalho;
 
@@ -39,6 +40,13 @@ public class TelaInfoBilheteForm extends JFrame {
         this.getContentPane().add(getBilheteForm(), BorderLayout.CENTER);
         this.getContentPane().add(getPassageiroForm(), BorderLayout.PAGE_END);
         this.setResizable(false);
+        event();
+    }
+
+    public abstract void btnProximo(ActionEvent e);
+
+    private void event(){
+        btnProximo.addActionListener(this::btnProximo);
     }
 
     public JPanel getjPanelCAbecalhoForm(){
