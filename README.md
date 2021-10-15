@@ -9,6 +9,9 @@
 * IntelliJ
 * PostgreSQL
 
+### Driver:
+- postgresql-4.2.2.24 [Baixar](https://jdbc.postgresql.org/download.html)
+
 ### Fluxo principal:
 
 - [X] O sistema exibe a tela inicial uma opção "realizar cheking";
@@ -16,7 +19,7 @@
 - [X] O sistema solicita o código localizador do bilhete;
 - [x] O usuário informa o código localizador e seleciona "próximo";
 - [x] O sistema locazila o bilhete;
-- [ ] 0 sistema exibe as informações do bilhete, como origem, destino, hora prevista do embarque, hora prevista da
+- [X] 0 sistema exibe as informações do bilhete, como origem, destino, hora prevista do embarque, hora prevista da
   partida, a hora do relógio da parede (para o usuário se planejar); as informações do passageiro, que no caso, são nome
   e cpf; e as opções:
   "atualizar dados pessoais" e "próximo";
