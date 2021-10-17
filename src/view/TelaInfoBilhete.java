@@ -13,7 +13,7 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm {
     @Override
     public void btnProximo(ActionEvent e) {
         SwingUtilities.invokeLater(() -> {
-            TelaAssento telaAssento = new TelaAssento();
+            TelaAssento telaAssento = new TelaAssento(bilhete);
             telaAssento.setVisible(true);
         });
     }

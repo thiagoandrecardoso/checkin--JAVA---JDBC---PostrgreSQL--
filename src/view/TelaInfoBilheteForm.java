@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.time.LocalTime;
 
 public abstract class TelaInfoBilheteForm extends JFrame {
-    private final Bilhete bilhete;
+    protected Bilhete bilhete;
     protected JPanel jPanelCAbecalho;
     protected JLabel jLabelCabecalho;
     protected JPanel jPanelInfoBilhete;
