@@ -2,6 +2,7 @@ package view;
 
 import model.Bilhete;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class TelaInfoBilhete extends TelaInfoBilheteForm{
@@ -11,6 +12,9 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm{
 
     @Override
     public void btnProximo(ActionEvent e) {
-        // TODO chamar tela de assentos.
+        SwingUtilities.invokeLater(() ->{
+            TelaAssento telaAssento = new TelaAssento();
+            telaAssento.setVisible(true);
+        });
     }
 }

@@ -18,7 +18,7 @@ public abstract class TelaAssentosForm extends JFrame {
     protected JButton jbAssento07;
     protected JButton jbAssento08;
     protected JSeparator jSeparator;
-    private List<JButton> jButtonList = new ArrayList<>();
+    private final List<JButton> jButtonList = new ArrayList<>();
 
     public TelaAssentosForm(){
         inicializar();
@@ -28,8 +28,9 @@ public abstract class TelaAssentosForm extends JFrame {
         this.setTitle("Assentos");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
+        this.getContentPane().add(getForm(), BorderLayout.CENTER);
         this.setResizable(false);
-
+        this.pack();
         configuraArrayDeBotoes();
         event();
     }
@@ -61,23 +62,34 @@ public abstract class TelaAssentosForm extends JFrame {
     public JPanel getForm(){
         if(jpAssento == null){
             jpAssento = new JPanel(new GridLayout(4, 2, 15, 15));
+
             jbAssento01 = new JButton("01");
+            jbAssento01.setPreferredSize(new Dimension(80, 80));
             jbAssento02 = new JButton("02");
+            jbAssento02.setPreferredSize(new Dimension(80, 80));
             jbAssento03 = new JButton("03");
+            jbAssento03.setPreferredSize(new Dimension(80, 80));
             jbAssento04 = new JButton("04");
+            jbAssento04.setPreferredSize(new Dimension(80, 80));
             jbAssento05 = new JButton("05");
+            jbAssento05.setPreferredSize(new Dimension(80, 80));
             jbAssento06 = new JButton("06");
+            jbAssento06.setPreferredSize(new Dimension(80, 80));
             jbAssento07 = new JButton("07");
+            jbAssento07.setPreferredSize(new Dimension(80, 80));
             jbAssento08 = new JButton("08");
+            jbAssento08.setPreferredSize(new Dimension(80, 80));
+
+            jpAssento.add(jbAssento01);
+            jpAssento.add(jbAssento02);
+            jpAssento.add(jbAssento03);
+            jpAssento.add(jbAssento04);
+            jpAssento.add(jbAssento05);
+            jpAssento.add(jbAssento06);
+            jpAssento.add(jbAssento07);
+            jpAssento.add(jbAssento08);
         }
         return jpAssento;
     }
 
-    public List<JButton> getjButtonList() {
-        return jButtonList;
-    }
-
-    public void setjButtonList(List<JButton> jButtonList) {
-        this.jButtonList = jButtonList;
-    }
 }
