@@ -7,24 +7,21 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.time.LocalTime;
 
-public abstract  class TelaInfoBilheteForm extends JFrame {
+public abstract class TelaInfoBilheteForm extends JFrame {
+    private final Bilhete bilhete;
     protected JPanel jPanelCAbecalho;
     protected JLabel jLabelCabecalho;
-
     protected JPanel jPanelInfoBilhete;
     protected JLabel jLabelOrigem;
     protected JLabel jLabelDestino;
     protected JLabel jLabelHoraPrevistaEmbarque;
     protected JLabel jLabelHoraPrevistaPartida;
     protected JLabel jLabelHoraRelogioParede;
-
     protected JPanel jPanelPassageiro;
     protected JTextField txtNome;
     protected JTextField txtCpf;
     protected JButton btnAtualizarDadosPessoais;
     protected JButton btnProximo;
-
-    private final Bilhete bilhete;
 
     public TelaInfoBilheteForm(Bilhete bilhete) {
         this.bilhete = bilhete;
@@ -45,21 +42,21 @@ public abstract  class TelaInfoBilheteForm extends JFrame {
 
     public abstract void btnProximo(ActionEvent e);
 
-    private void event(){
+    private void event() {
         btnProximo.addActionListener(this::btnProximo);
     }
 
-    public JPanel getjPanelCAbecalhoForm(){
-        if (jPanelCAbecalho == null){
+    public JPanel getjPanelCAbecalhoForm() {
+        if (jPanelCAbecalho == null) {
             jPanelCAbecalho = new JPanel();
             jLabelCabecalho = new JLabel("Informações da Linha:");
             jPanelCAbecalho.add(jLabelCabecalho);
         }
-        return  jPanelCAbecalho;
+        return jPanelCAbecalho;
     }
 
     public JPanel getBilheteForm() {
-        if (jPanelInfoBilhete == null){
+        if (jPanelInfoBilhete == null) {
             jPanelInfoBilhete = new JPanel(new GridLayout(5, 1, 10, 10));
             jLabelOrigem = new JLabel("Origem: " + bilhete.getLinha().getOrigem());
             jLabelDestino = new JLabel("Destino: " + bilhete.getLinha().getDestino());
@@ -78,8 +75,8 @@ public abstract  class TelaInfoBilheteForm extends JFrame {
         return jPanelInfoBilhete;
     }
 
-    public JPanel getPassageiroForm(){
-        if (jPanelPassageiro == null){
+    public JPanel getPassageiroForm() {
+        if (jPanelPassageiro == null) {
             jPanelPassageiro = new JPanel(new GridLayout(2, 2, 10, 5));
             txtNome = new JTextField(bilhete.getPassageiro().getNome());
             txtCpf = new JTextField(bilhete.getPassageiro().getCpf());

@@ -1,13 +1,16 @@
 package view;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class TelaAssentosForm extends JFrame {
+    private final List<JButton> jButtonList = new ArrayList<>();
     protected JPanel jpAssento;
+    protected JPanel jpCabechalho;
     protected JLabel jlAssento;
     protected JButton jbAssento01;
     protected JButton jbAssento02;
@@ -17,17 +20,16 @@ public abstract class TelaAssentosForm extends JFrame {
     protected JButton jbAssento06;
     protected JButton jbAssento07;
     protected JButton jbAssento08;
-    protected JSeparator jSeparator;
-    private final List<JButton> jButtonList = new ArrayList<>();
 
-    public TelaAssentosForm(){
+    public TelaAssentosForm() {
         inicializar();
     }
 
-    private void inicializar(){
+    private void inicializar() {
         this.setTitle("Assentos");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
+        this.getContentPane().add(getCcabecalhoForm(), BorderLayout.PAGE_START);
         this.getContentPane().add(getForm(), BorderLayout.CENTER);
         this.setResizable(false);
         this.pack();
@@ -37,7 +39,7 @@ public abstract class TelaAssentosForm extends JFrame {
 
     protected abstract void selecionaAssento(ActionEvent ev);
 
-    private void event(){
+    private void event() {
         jbAssento01.addActionListener(this::selecionaAssento);
         jbAssento02.addActionListener(this::selecionaAssento);
         jbAssento03.addActionListener(this::selecionaAssento);
@@ -48,7 +50,7 @@ public abstract class TelaAssentosForm extends JFrame {
         jbAssento08.addActionListener(this::selecionaAssento);
     }
 
-    public void configuraArrayDeBotoes(){
+    public void configuraArrayDeBotoes() {
         jButtonList.add(jbAssento01);
         jButtonList.add(jbAssento02);
         jButtonList.add(jbAssento03);
@@ -59,8 +61,19 @@ public abstract class TelaAssentosForm extends JFrame {
         jButtonList.add(jbAssento08);
     }
 
-    public JPanel getForm(){
-        if(jpAssento == null){
+    public JPanel getCcabecalhoForm(){
+        if (jpCabechalho == null){
+            jpCabechalho = new JPanel();
+            jlAssento = new JLabel("Click para selecionar um Assento:");
+            Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+            jlAssento.setBorder(border);
+            jpCabechalho.add(jlAssento);
+        }
+        return jpCabechalho;
+    }
+
+    public JPanel getForm() {
+        if (jpAssento == null) {
             jpAssento = new JPanel(new GridLayout(4, 2, 15, 15));
 
             jbAssento01 = new JButton("01");
