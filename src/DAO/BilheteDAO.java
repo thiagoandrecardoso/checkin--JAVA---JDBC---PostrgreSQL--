@@ -5,15 +5,15 @@ import model.Bilhete;
 import model.Linha;
 import model.Passageiro;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BilheteDAO {
     private final String SELECT_BY_CODE;
     private final String UPDATE_BY_CODE;
+    private final String GET_LIST_BY_LINHA;
 
     {
         SELECT_BY_CODE = "SELECT CODIGO,ASSENTO,id_passageiro,id_linha,assento_marcado_em FROM bilhete WHERE CODIGO=?";
@@ -21,6 +21,10 @@ public class BilheteDAO {
 
     {
         UPDATE_BY_CODE = "UPDATE bilhete SET assento = ?, assento_marcado_em = ? WHERE codigo = ?";
+    }
+
+    {
+        GET_LIST_BY_LINHA = "SELECT ASSENTO FROM bilhete WHERE id_linha = ";
     }
 
     public Bilhete getTicketByCode(String code) {
@@ -81,5 +85,35 @@ public class BilheteDAO {
             ConnDB.CLosePreparedStatement(preparedStatement);
             ConnDB.CloseConn(connection);
         }
+    }
+
+    public List<String> getAssentoByLinha(){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        List<String> assentosList = new ArrayList<>();
+
+        try {
+            connection = ConnDB.getInstance();
+            if (connection == null){
+                System.out.println("Falha na conexão");
+                return assentosList;
+            }
+            preparedStatement = connection.prepareStatement(GET_LIST_BY_LINHA);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                if (rs.getString("ASSENTO") != null){
+                    assentosList.add(rs.getString("ASSENTO"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnDB.CloseResultSet(rs);
+            ConnDB.CLosePreparedStatement(preparedStatement);
+            ConnDB.CloseConn(connection);
+        }
+
+        return assentosList;
     }
 }
