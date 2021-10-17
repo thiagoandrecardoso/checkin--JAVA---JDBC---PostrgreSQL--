@@ -21,12 +21,19 @@ public abstract class TelaInicialForm extends JFrame {
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getForm(), BorderLayout.CENTER);
         this.setResizable(false);
+        event();
     }
 
-    protected abstract void abrirTelaRealizarCHekin(ActionEvent ev);
+    protected abstract void btnProximoLocalizaBilhete(ActionEvent ev);
+
+    protected abstract void adicionarEscutaCheckBox();
+
+    protected abstract void adicionaEscutaTxtCheckin();
 
     private void event() {
-
+        btnProximo.addActionListener(this::btnProximoLocalizaBilhete);
+        adicionarEscutaCheckBox();
+        adicionaEscutaTxtCheckin();
     }
 
     public JPanel getForm() {
