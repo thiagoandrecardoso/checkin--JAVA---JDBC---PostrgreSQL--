@@ -23,7 +23,7 @@
   partida, a hora do relógio da parede (para o usuário se planejar); as informações do passageiro, que no caso, são nome
   e cpf; e as opções:
   "atualizar dados pessoais" e "próximo";
-- [ ] O usuário seleciona próximo;
+- [X] O usuário seleciona próximo;
 - [ ] O sistema exibe uma tela para marcação de assento da linha em questão posicionadas de acordo com o tipo de veículo
   que efetuará a passagem e indicando visualmente os assentos disponíveis e os não disponíveis para a marcação;
 - [ ] O usuário seleciona o seu assento e seleciona "próximo";
