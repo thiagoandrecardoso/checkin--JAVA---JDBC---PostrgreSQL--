@@ -82,21 +82,21 @@ public abstract class TelaAssentosForm extends JFrame {
         if (jpAssento == null) {
             jpAssento = new JPanel(new GridLayout(4, 2, 15, 15));
 
-            jbAssento01 = new JButton("01");
+            jbAssento01 = new JButton("7");
             jbAssento01.setPreferredSize(new Dimension(80, 80));
-            jbAssento02 = new JButton("02");
+            jbAssento02 = new JButton("8");
             jbAssento02.setPreferredSize(new Dimension(80, 80));
-            jbAssento03 = new JButton("03");
+            jbAssento03 = new JButton("10");
             jbAssento03.setPreferredSize(new Dimension(80, 80));
-            jbAssento04 = new JButton("04");
+            jbAssento04 = new JButton("11");
             jbAssento04.setPreferredSize(new Dimension(80, 80));
-            jbAssento05 = new JButton("05");
+            jbAssento05 = new JButton("15");
             jbAssento05.setPreferredSize(new Dimension(80, 80));
-            jbAssento06 = new JButton("06");
+            jbAssento06 = new JButton("20");
             jbAssento06.setPreferredSize(new Dimension(80, 80));
-            jbAssento07 = new JButton("07");
+            jbAssento07 = new JButton("24");
             jbAssento07.setPreferredSize(new Dimension(80, 80));
-            jbAssento08 = new JButton("08");
+            jbAssento08 = new JButton("25");
             jbAssento08.setPreferredSize(new Dimension(80, 80));
 
             jpAssento.add(jbAssento01);
