@@ -1,5 +1,7 @@
 package view;
 
+import model.Bilhete;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -8,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class TelaAssentosForm extends JFrame {
-    private final List<JButton> jButtonList = new ArrayList<>();
+    protected Bilhete bilhete;
+    protected  List<JButton> jButtonList = new ArrayList<>();
     protected JPanel jpAssento;
     protected JPanel jpCabechalho;
     protected JLabel jlAssento;
@@ -21,7 +24,8 @@ public abstract class TelaAssentosForm extends JFrame {
     protected JButton jbAssento07;
     protected JButton jbAssento08;
 
-    public TelaAssentosForm() {
+    public TelaAssentosForm(Bilhete bilhete) {
+        this.bilhete = bilhete;
         inicializar();
     }
 
@@ -35,9 +39,11 @@ public abstract class TelaAssentosForm extends JFrame {
         this.pack();
         configuraArrayDeBotoes();
         event();
+        redenrizaAssentos();
     }
 
     protected abstract void selecionaAssento(ActionEvent ev);
+    protected abstract void redenrizaAssentos();
 
     private void event() {
         jbAssento01.addActionListener(this::selecionaAssento);
