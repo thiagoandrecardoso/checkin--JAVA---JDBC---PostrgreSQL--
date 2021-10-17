@@ -24,7 +24,7 @@ public class BilheteDAO {
     }
 
     {
-        GET_LIST_BY_LINHA = "SELECT ASSENTO FROM bilhete WHERE id_linha = ";
+        GET_LIST_BY_LINHA = "SELECT ASSENTO FROM bilhete WHERE id_linha = ?";
     }
 
     public Bilhete getTicketByCode(String code) {
@@ -100,8 +100,8 @@ public class BilheteDAO {
                 return assentosList;
             }
             preparedStatement = connection.prepareStatement(GET_LIST_BY_LINHA);
-            rs = preparedStatement.executeQuery();
             preparedStatement.setInt(1, id);
+            rs = preparedStatement.executeQuery();
             while (rs.next()){
                 if (rs.getString("ASSENTO") != null){
                     assentosList.add(rs.getString("ASSENTO"));
