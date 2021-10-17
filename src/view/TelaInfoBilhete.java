@@ -11,6 +11,6 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm{
 
     @Override
     public void btnProximo(ActionEvent e) {
-        System.out.println("Teste do botão próximo!");
+        // TODO chamar tela de assentos.
     }
 }
