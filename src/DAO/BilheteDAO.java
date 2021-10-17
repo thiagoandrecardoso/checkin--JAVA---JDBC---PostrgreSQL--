@@ -87,7 +87,7 @@ public class BilheteDAO {
         }
     }
 
-    public List<String> getAssentoByLinha(){
+    public List<String> getAssentoByLinha(int id){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
@@ -101,6 +101,7 @@ public class BilheteDAO {
             }
             preparedStatement = connection.prepareStatement(GET_LIST_BY_LINHA);
             rs = preparedStatement.executeQuery();
+            preparedStatement.setInt(1, id);
             while (rs.next()){
                 if (rs.getString("ASSENTO") != null){
                     assentosList.add(rs.getString("ASSENTO"));
