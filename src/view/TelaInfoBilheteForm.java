@@ -79,7 +79,9 @@ public abstract class TelaInfoBilheteForm extends JFrame {
         if (jPanelPassageiro == null) {
             jPanelPassageiro = new JPanel(new GridLayout(2, 2, 10, 5));
             txtNome = new JTextField(bilhete.getPassageiro().getNome());
+            txtNome.setEditable(false);
             txtCpf = new JTextField(bilhete.getPassageiro().getCpf());
+            txtCpf.setEditable(false);
             btnAtualizarDadosPessoais = new JButton("Editar");
             btnProximo = new JButton("Próximo");
 
