@@ -62,9 +62,9 @@ public abstract class TelaAssentosForm extends JFrame {
 
     public JPanel getForm() {
         if (jpAssento == null) {
-            jpAssento = new JPanel(new GridLayout(10, 4, 15, 15));
+            jpAssento = new JPanel(new GridLayout(10, 4, 10, 10));
             for (int i = 0; i < 40; ++i) {
-                buttons[i].setPreferredSize(new Dimension(80, 80));
+                buttons[i].setPreferredSize(new Dimension(50, 50));
                 jpAssento.add(buttons[i]);
             }
         }
