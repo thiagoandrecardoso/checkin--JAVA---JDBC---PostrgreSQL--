@@ -1,11 +1,9 @@
 package view;
 
 import DAO.BilheteDAO;
-import DAO.LinhaDAO;
 import model.Bilhete;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
@@ -27,9 +25,9 @@ public class TelaAssento extends TelaAssentosForm {
         List<String> assentoList = bilheteDAO.getAssentoByLinha(linha_id);
 
         for(String s : assentoList){
-            for(JButton jb : jButtonList){
+            for(JButton jb : buttons){
                 if (jb.getText().equals(s)){
-                    jb.setText(jb.getText() + " - X");
+                    jb.setText(jb.getText());
                     jb.setEnabled(false);
                 }
             }
