@@ -23,6 +23,12 @@ public class TelaAssento extends TelaAssentosForm {
         buttons[numeroAssento - 1].setBackground(Color.GREEN);
     }
 
+    @Override
+    protected void proximo(ActionEvent ev) {
+        BilheteDAO bilheteDAO = new BilheteDAO();
+        bilheteDAO.uodateByCode(bilhete, numeroAssento);
+    }
+
     private void renderizaDepoisQueSeleciona(){
         for (int i = 0; i < 40; ++i) {
             if (buttons[i].isEnabled()){

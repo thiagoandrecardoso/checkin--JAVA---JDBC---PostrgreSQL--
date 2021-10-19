@@ -47,7 +47,7 @@ public class BilheteDAO {
             while (rs.next()) {
                 Passageiro passageiro = passageiroDAO.getPassengerById(rs.getInt("id_passageiro"));
                 Linha linha = linhaDAO.getLineById(rs.getInt("id_linha"));
-                bilhete = new Bilhete(rs.getString("CODIGO"), rs.getString("ASSENTO"),
+                bilhete = new Bilhete(rs.getString("CODIGO"), rs.getInt("ASSENTO"),
                         passageiro, linha,
                         rs.getObject(5, LocalDateTime.class));
             }
@@ -62,7 +62,7 @@ public class BilheteDAO {
         return bilhete;
     }
 
-    public void uodateByCode(Bilhete bilhete, String assento) {
+    public void uodateByCode(Bilhete bilhete, int assento) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
@@ -74,7 +74,7 @@ public class BilheteDAO {
             }
             connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(UPDATE_BY_CODE);
-            preparedStatement.setString(1, assento);
+            preparedStatement.setInt(1, assento);
             preparedStatement.setObject(2, LocalDateTime.now());
             preparedStatement.setString(3, bilhete.getCodigo());
             preparedStatement.execute();

@@ -13,6 +13,8 @@ public abstract class TelaAssentosForm extends JFrame {
     protected JPanel jpAssento;
     protected JPanel jpCabechalho;
     protected JLabel jlAssento;
+    protected JPanel jpButton;
+    protected JButton jbProximo;
 
     public TelaAssentosForm(Bilhete bilhete) {
         this.bilhete = bilhete;
@@ -26,6 +28,7 @@ public abstract class TelaAssentosForm extends JFrame {
         this.getContentPane().add(getCcabecalhoForm(), BorderLayout.PAGE_START);
         configuraArrayDeBotoes();
         this.getContentPane().add(getForm(), BorderLayout.CENTER);
+        this.getContentPane().add(getJpButtonForm(), BorderLayout.PAGE_END);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.pack();
@@ -34,6 +37,7 @@ public abstract class TelaAssentosForm extends JFrame {
     }
 
     protected abstract void selecionaAssento(ActionEvent ev);
+    protected abstract void proximo(ActionEvent ev);
 
     protected abstract void redenrizaAssentos();
 
@@ -41,6 +45,7 @@ public abstract class TelaAssentosForm extends JFrame {
         for (int i = 0; i < 40; ++i) {
             buttons[i].addActionListener(this::selecionaAssento);
         }
+        jbProximo.addActionListener(this::proximo);
     }
 
     public void configuraArrayDeBotoes() {
@@ -72,6 +77,17 @@ public abstract class TelaAssentosForm extends JFrame {
             }
         }
         return jpAssento;
+    }
+
+    public JPanel getJpButtonForm(){
+        if (jpButton == null){
+            jpButton = new JPanel();
+            jbProximo = new JButton("Próximo");
+            Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+            jbProximo.setBorder(border);
+            jpButton.add(jbProximo);
+        }
+        return jpButton;
     }
 
 }
