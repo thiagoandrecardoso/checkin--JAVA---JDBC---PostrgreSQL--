@@ -24,10 +24,10 @@
   e cpf; e as opções:
   "atualizar dados pessoais" e "próximo";
 - [X] O usuário seleciona próximo;
-- [ ] O sistema exibe uma tela para marcação de assento da linha em questão posicionadas de acordo com o tipo de veículo
+- [X] O sistema exibe uma tela para marcação de assento da linha em questão posicionadas de acordo com o tipo de veículo
   que efetuará a passagem e indicando visualmente os assentos disponíveis e os não disponíveis para a marcação;
-- [ ] O usuário seleciona o seu assento e seleciona "próximo";
-- [ ] O sistema marca o assento para esse localizador do bilhete;
+- [X] O usuário seleciona o seu assento e seleciona "próximo";
+- [X] O sistema marca o assento para esse localizador do bilhete;
 - [ ] O sistema exibe a mensagem "Cheking realizado com sucesso";
 - [ ] O sistema volta para a tela inicial.
 

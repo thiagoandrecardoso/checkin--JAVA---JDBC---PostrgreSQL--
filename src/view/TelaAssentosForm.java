@@ -1,27 +1,23 @@
 package view;
 
+import model.Bilhete;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class TelaAssentosForm extends JFrame {
-    private final List<JButton> jButtonList = new ArrayList<>();
+    protected Bilhete bilhete;
+    JButton[] buttons = new JButton[40];
     protected JPanel jpAssento;
     protected JPanel jpCabechalho;
     protected JLabel jlAssento;
-    protected JButton jbAssento01;
-    protected JButton jbAssento02;
-    protected JButton jbAssento03;
-    protected JButton jbAssento04;
-    protected JButton jbAssento05;
-    protected JButton jbAssento06;
-    protected JButton jbAssento07;
-    protected JButton jbAssento08;
+    protected JPanel jpButton;
+    protected JButton jbProximo;
 
-    public TelaAssentosForm() {
+    public TelaAssentosForm(Bilhete bilhete) {
+        this.bilhete = bilhete;
         inicializar();
     }
 
@@ -30,39 +26,36 @@ public abstract class TelaAssentosForm extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getCcabecalhoForm(), BorderLayout.PAGE_START);
-        this.getContentPane().add(getForm(), BorderLayout.CENTER);
-        this.setResizable(false);
-        this.pack();
         configuraArrayDeBotoes();
+        this.getContentPane().add(getForm(), BorderLayout.CENTER);
+        this.getContentPane().add(getJpButtonForm(), BorderLayout.PAGE_END);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.pack();
+        redenrizaAssentos();
         event();
     }
 
     protected abstract void selecionaAssento(ActionEvent ev);
+    protected abstract void proximo(ActionEvent ev);
+
+    protected abstract void redenrizaAssentos();
 
     private void event() {
-        jbAssento01.addActionListener(this::selecionaAssento);
-        jbAssento02.addActionListener(this::selecionaAssento);
-        jbAssento03.addActionListener(this::selecionaAssento);
-        jbAssento04.addActionListener(this::selecionaAssento);
-        jbAssento05.addActionListener(this::selecionaAssento);
-        jbAssento06.addActionListener(this::selecionaAssento);
-        jbAssento07.addActionListener(this::selecionaAssento);
-        jbAssento08.addActionListener(this::selecionaAssento);
+        for (int i = 0; i < 40; ++i) {
+            buttons[i].addActionListener(this::selecionaAssento);
+        }
+        jbProximo.addActionListener(this::proximo);
     }
 
     public void configuraArrayDeBotoes() {
-        jButtonList.add(jbAssento01);
-        jButtonList.add(jbAssento02);
-        jButtonList.add(jbAssento03);
-        jButtonList.add(jbAssento04);
-        jButtonList.add(jbAssento05);
-        jButtonList.add(jbAssento06);
-        jButtonList.add(jbAssento07);
-        jButtonList.add(jbAssento08);
+        for (int i = 0; i < 40; ++i) {
+            buttons[i] = new JButton("" + (i + 1));
+        }
     }
 
-    public JPanel getCcabecalhoForm(){
-        if (jpCabechalho == null){
+    public JPanel getCcabecalhoForm() {
+        if (jpCabechalho == null) {
             jpCabechalho = new JPanel();
             jlAssento = new JLabel("Click para selecionar um Assento:");
             Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
@@ -74,35 +67,27 @@ public abstract class TelaAssentosForm extends JFrame {
 
     public JPanel getForm() {
         if (jpAssento == null) {
-            jpAssento = new JPanel(new GridLayout(4, 2, 15, 15));
-
-            jbAssento01 = new JButton("01");
-            jbAssento01.setPreferredSize(new Dimension(80, 80));
-            jbAssento02 = new JButton("02");
-            jbAssento02.setPreferredSize(new Dimension(80, 80));
-            jbAssento03 = new JButton("03");
-            jbAssento03.setPreferredSize(new Dimension(80, 80));
-            jbAssento04 = new JButton("04");
-            jbAssento04.setPreferredSize(new Dimension(80, 80));
-            jbAssento05 = new JButton("05");
-            jbAssento05.setPreferredSize(new Dimension(80, 80));
-            jbAssento06 = new JButton("06");
-            jbAssento06.setPreferredSize(new Dimension(80, 80));
-            jbAssento07 = new JButton("07");
-            jbAssento07.setPreferredSize(new Dimension(80, 80));
-            jbAssento08 = new JButton("08");
-            jbAssento08.setPreferredSize(new Dimension(80, 80));
-
-            jpAssento.add(jbAssento01);
-            jpAssento.add(jbAssento02);
-            jpAssento.add(jbAssento03);
-            jpAssento.add(jbAssento04);
-            jpAssento.add(jbAssento05);
-            jpAssento.add(jbAssento06);
-            jpAssento.add(jbAssento07);
-            jpAssento.add(jbAssento08);
+            jpAssento = new JPanel(new GridLayout(10, 4, 10, 10));
+            for (int i = 0; i < 40; ++i) {
+                buttons[i].setPreferredSize(new Dimension(50, 50));
+                buttons[i].setContentAreaFilled(false);
+                buttons[i].setOpaque(true);
+                buttons[i].setBackground(Color.BLUE);
+                jpAssento.add(buttons[i]);
+            }
         }
         return jpAssento;
+    }
+
+    public JPanel getJpButtonForm(){
+        if (jpButton == null){
+            jpButton = new JPanel();
+            jbProximo = new JButton("Próximo");
+            Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+            jbProximo.setBorder(border);
+            jpButton.add(jbProximo);
+        }
+        return jpButton;
     }
 
 }

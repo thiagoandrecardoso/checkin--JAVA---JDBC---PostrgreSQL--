@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.time.LocalTime;
 
 public abstract class TelaInfoBilheteForm extends JFrame {
-    private final Bilhete bilhete;
+    protected Bilhete bilhete;
     protected JPanel jPanelCAbecalho;
     protected JLabel jLabelCabecalho;
     protected JPanel jPanelInfoBilhete;
@@ -31,6 +31,7 @@ public abstract class TelaInfoBilheteForm extends JFrame {
     private void inicializar() {
         this.setTitle("Informações do bilhete");
         this.setSize(300, 250);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);
@@ -79,7 +80,9 @@ public abstract class TelaInfoBilheteForm extends JFrame {
         if (jPanelPassageiro == null) {
             jPanelPassageiro = new JPanel(new GridLayout(2, 2, 10, 5));
             txtNome = new JTextField(bilhete.getPassageiro().getNome());
+            txtNome.setEditable(false);
             txtCpf = new JTextField(bilhete.getPassageiro().getCpf());
+            txtCpf.setEditable(false);
             btnAtualizarDadosPessoais = new JButton("Editar");
             btnProximo = new JButton("Próximo");
 

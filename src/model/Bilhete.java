@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Bilhete {
     private String codigo;
-    private String assento;
+    private Integer assento;
     private Passageiro passageiro;
     private Linha linha;
     private LocalDateTime assento_marcado_em;
@@ -12,7 +12,7 @@ public class Bilhete {
     public Bilhete() {
     }
 
-    public Bilhete(String codigo, String assento, Passageiro passageiro, Linha linha, LocalDateTime assento_marcado_em) {
+    public Bilhete(String codigo, Integer assento, Passageiro passageiro, Linha linha, LocalDateTime assento_marcado_em) {
         this.codigo = codigo;
         this.assento = assento;
         this.passageiro = passageiro;
@@ -28,11 +28,11 @@ public class Bilhete {
         this.codigo = codigo;
     }
 
-    public String getAssento() {
+    public Integer getAssento() {
         return assento;
     }
 
-    public void setAssento(String assento) {
+    public void setAssento(Integer assento) {
         this.assento = assento;
     }
 
