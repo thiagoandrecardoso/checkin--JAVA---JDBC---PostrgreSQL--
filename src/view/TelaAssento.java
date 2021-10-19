@@ -19,6 +19,16 @@ public class TelaAssento extends TelaAssentosForm {
     @Override
     protected void selecionaAssento(ActionEvent ev) {
         numeroAssento = Integer.parseInt(ev.getActionCommand());
+        renderizaDepoisQueSeleciona();
+        buttons[numeroAssento - 1].setBackground(Color.GREEN);
+    }
+
+    private void renderizaDepoisQueSeleciona(){
+        for (int i = 0; i < 40; ++i) {
+            if (buttons[i].isEnabled()){
+                buttons[i].setBackground(Color.BLUE);
+            }
+        }
     }
 
     @Override
