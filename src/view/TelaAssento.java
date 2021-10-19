@@ -10,13 +10,15 @@ import java.util.List;
 
 public class TelaAssento extends TelaAssentosForm {
 
+    private int numeroAssento;
+
     public TelaAssento(Bilhete bilhete) {
         super(bilhete);
     }
 
     @Override
     protected void selecionaAssento(ActionEvent ev) {
-
+        numeroAssento = Integer.parseInt(ev.getActionCommand());
     }
 
     @Override

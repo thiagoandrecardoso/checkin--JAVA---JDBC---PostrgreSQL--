@@ -38,8 +38,8 @@ public abstract class TelaAssentosForm extends JFrame {
     protected abstract void redenrizaAssentos();
 
     private void event() {
-        for (JButton jButton : buttons) {
-            jButton.addActionListener(this::selecionaAssento);
+        for (int i = 0; i < 40; ++i) {
+            buttons[i].addActionListener(this::selecionaAssento);
         }
     }
 
