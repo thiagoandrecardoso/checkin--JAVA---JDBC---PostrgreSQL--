@@ -31,6 +31,7 @@ public abstract class TelaInfoBilheteForm extends JFrame {
     private void inicializar() {
         this.setTitle("Informações do bilhete");
         this.setSize(300, 250);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);

@@ -27,8 +27,8 @@ public abstract class TelaAssentosForm extends JFrame {
         configuraArrayDeBotoes();
         this.getContentPane().add(getForm(), BorderLayout.CENTER);
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.pack();
-
         redenrizaAssentos();
         event();
     }

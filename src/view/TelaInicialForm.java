@@ -17,6 +17,7 @@ public abstract class TelaInicialForm extends JFrame {
     private void inicializar() {
         this.setTitle("Checkin");
         this.setSize(300, 150);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getForm(), BorderLayout.CENTER);
