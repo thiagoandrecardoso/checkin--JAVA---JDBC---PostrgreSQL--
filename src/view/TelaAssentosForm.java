@@ -65,6 +65,9 @@ public abstract class TelaAssentosForm extends JFrame {
             jpAssento = new JPanel(new GridLayout(10, 4, 10, 10));
             for (int i = 0; i < 40; ++i) {
                 buttons[i].setPreferredSize(new Dimension(50, 50));
+                buttons[i].setContentAreaFilled(false);
+                buttons[i].setOpaque(true);
+                buttons[i].setBackground(Color.BLUE);
                 jpAssento.add(buttons[i]);
             }
         }

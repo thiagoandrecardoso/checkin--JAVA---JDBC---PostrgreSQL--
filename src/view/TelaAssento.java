@@ -4,6 +4,7 @@ import DAO.BilheteDAO;
 import model.Bilhete;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class TelaAssento extends TelaAssentosForm {
         for(String s : assentoList){
             for(JButton jb : buttons){
                 if (jb.getText().equals(s)){
+                    jb.setBackground(Color.RED);
                     jb.setText(jb.getText());
                     jb.setEnabled(false);
                 }
