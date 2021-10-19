@@ -27,6 +27,8 @@ public class TelaAssento extends TelaAssentosForm {
     protected void proximo(ActionEvent ev) {
         BilheteDAO bilheteDAO = new BilheteDAO();
         bilheteDAO.uodateByCode(bilhete, numeroAssento);
+        JOptionPane.showMessageDialog(null, "Checkin realizado com sucesso!");
+        this.dispose();
     }
 
     private void renderizaDepoisQueSeleciona(){
