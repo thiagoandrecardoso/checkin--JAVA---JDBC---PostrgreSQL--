@@ -1,7 +1,8 @@
-package view;
+package control;
 
 import DAO.BilheteDAO;
 import model.Bilhete;
+import view.TelaInicialForm;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -13,7 +14,7 @@ import java.awt.event.FocusEvent;
 public class TelaInicial extends TelaInicialForm {
 
     @Override
-    protected void btnProximoLocalizaBilhete(ActionEvent ev) {
+    public void btnProximoLocalizaBilhete(ActionEvent ev) {
         String codigoBilhete = txtCheckin.getText();
         BilheteDAO bilheteDAO = new BilheteDAO();
         Bilhete bilhete = bilheteDAO.getTicketByCode(codigoBilhete);
@@ -33,11 +34,10 @@ public class TelaInicial extends TelaInicialForm {
             frame.setVisible(true);
         });
 
-
     }
 
     @Override
-    protected void adicionarEscutaCheckBox() {
+    public void adicionarEscutaCheckBox() {
         cbCheckin.addItemListener(e -> {
             if (cbCheckin.isSelected()) {
                 txtCheckin.setEditable(true);
@@ -49,7 +49,7 @@ public class TelaInicial extends TelaInicialForm {
     }
 
     @Override
-    protected void adicionaEscutaTxtCheckin() {
+    public void adicionaEscutaTxtCheckin() {
         txtCheckin.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {

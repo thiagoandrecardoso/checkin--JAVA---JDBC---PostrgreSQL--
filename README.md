@@ -10,6 +10,7 @@
 * PostgreSQL
 
 ### Driver:
+
 - postgresql-4.2.2.24 [Baixar](https://jdbc.postgresql.org/download.html)
 
 ### Fluxo principal:

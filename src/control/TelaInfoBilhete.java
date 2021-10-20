@@ -1,6 +1,7 @@
-package view;
+package control;
 
 import model.Bilhete;
+import view.TelaInfoBilheteForm;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

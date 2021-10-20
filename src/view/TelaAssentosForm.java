@@ -8,13 +8,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public abstract class TelaAssentosForm extends JFrame {
-    protected Bilhete bilhete;
-    JButton[] buttons = new JButton[40];
-    protected JPanel jpAssento;
-    protected JPanel jpCabechalho;
-    protected JLabel jlAssento;
-    protected JPanel jpButton;
-    protected JButton jbProximo;
+    public Bilhete bilhete;
+    public JButton[] buttons = new JButton[40];
+    public JPanel jpAssento;
+    public JPanel jpCabechalho;
+    public JLabel jlAssento;
+    public JPanel jpButton;
+    public JButton jbProximo;
 
     public TelaAssentosForm(Bilhete bilhete) {
         this.bilhete = bilhete;
@@ -36,10 +36,11 @@ public abstract class TelaAssentosForm extends JFrame {
         event();
     }
 
-    protected abstract void selecionaAssento(ActionEvent ev);
-    protected abstract void proximo(ActionEvent ev);
+    public abstract void selecionaAssento(ActionEvent ev);
 
-    protected abstract void redenrizaAssentos();
+    public abstract void proximo(ActionEvent ev);
+
+    public abstract void redenrizaAssentos();
 
     private void event() {
         for (int i = 0; i < 40; ++i) {
@@ -79,8 +80,8 @@ public abstract class TelaAssentosForm extends JFrame {
         return jpAssento;
     }
 
-    public JPanel getJpButtonForm(){
-        if (jpButton == null){
+    public JPanel getJpButtonForm() {
+        if (jpButton == null) {
             jpButton = new JPanel();
             jbProximo = new JButton("Próximo");
             Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);

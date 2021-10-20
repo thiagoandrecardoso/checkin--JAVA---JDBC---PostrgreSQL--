@@ -8,20 +8,20 @@ import java.awt.event.ActionEvent;
 import java.time.LocalTime;
 
 public abstract class TelaInfoBilheteForm extends JFrame {
-    protected Bilhete bilhete;
-    protected JPanel jPanelCAbecalho;
-    protected JLabel jLabelCabecalho;
-    protected JPanel jPanelInfoBilhete;
-    protected JLabel jLabelOrigem;
-    protected JLabel jLabelDestino;
-    protected JLabel jLabelHoraPrevistaEmbarque;
-    protected JLabel jLabelHoraPrevistaPartida;
-    protected JLabel jLabelHoraRelogioParede;
-    protected JPanel jPanelPassageiro;
-    protected JTextField txtNome;
-    protected JTextField txtCpf;
-    protected JButton btnAtualizarDadosPessoais;
-    protected JButton btnProximo;
+    public Bilhete bilhete;
+    public JPanel jPanelCAbecalho;
+    public JLabel jLabelCabecalho;
+    public JPanel jPanelInfoBilhete;
+    public JLabel jLabelOrigem;
+    public JLabel jLabelDestino;
+    public JLabel jLabelHoraPrevistaEmbarque;
+    public JLabel jLabelHoraPrevistaPartida;
+    public JLabel jLabelHoraRelogioParede;
+    public JPanel jPanelPassageiro;
+    public JTextField txtNome;
+    public JTextField txtCpf;
+    public JButton btnAtualizarDadosPessoais;
+    public JButton btnProximo;
 
     public TelaInfoBilheteForm(Bilhete bilhete) {
         this.bilhete = bilhete;
@@ -29,7 +29,7 @@ public abstract class TelaInfoBilheteForm extends JFrame {
     }
 
     private void inicializar() {
-        jPanelCAbecalho =  getjPanelCAbecalhoForm();
+        jPanelCAbecalho = getjPanelCAbecalhoForm();
         jPanelInfoBilhete = getBilheteForm();
         jPanelPassageiro = getPassageiroForm();
         event();
