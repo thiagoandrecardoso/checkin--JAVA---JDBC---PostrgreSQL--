@@ -5,7 +5,10 @@ import model.Bilhete;
 import model.Linha;
 import model.Passageiro;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +90,7 @@ public class BilheteDAO {
         }
     }
 
-    public List<String> getAssentoByLinha(int id){
+    public List<String> getAssentoByLinha(int id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
@@ -95,15 +98,15 @@ public class BilheteDAO {
 
         try {
             connection = ConnDB.getInstance();
-            if (connection == null){
+            if (connection == null) {
                 System.out.println("Falha na conexão");
                 return assentosList;
             }
             preparedStatement = connection.prepareStatement(GET_LIST_BY_LINHA);
             preparedStatement.setInt(1, id);
             rs = preparedStatement.executeQuery();
-            while (rs.next()){
-                if (rs.getString("ASSENTO") != null){
+            while (rs.next()) {
+                if (rs.getString("ASSENTO") != null) {
                     assentosList.add(rs.getString("ASSENTO"));
                 }
             }

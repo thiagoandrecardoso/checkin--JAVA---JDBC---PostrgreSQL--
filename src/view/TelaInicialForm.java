@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public abstract class TelaInicialForm extends JFrame {
-    protected JPanel jPanel;
-    protected JCheckBox cbCheckin;
-    protected JTextField txtCheckin;
-    protected JButton btnProximo;
+    public JPanel jPanel;
+    public JCheckBox cbCheckin;
+    public JTextField txtCheckin;
+    public JButton btnProximo;
 
     public TelaInicialForm() {
         this.inicializar();
@@ -25,11 +25,11 @@ public abstract class TelaInicialForm extends JFrame {
         event();
     }
 
-    protected abstract void btnProximoLocalizaBilhete(ActionEvent ev);
+    public abstract void btnProximoLocalizaBilhete(ActionEvent ev);
 
-    protected abstract void adicionarEscutaCheckBox();
+    public abstract void adicionarEscutaCheckBox();
 
-    protected abstract void adicionaEscutaTxtCheckin();
+    public abstract void adicionaEscutaTxtCheckin();
 
     private void event() {
         btnProximo.addActionListener(this::btnProximoLocalizaBilhete);

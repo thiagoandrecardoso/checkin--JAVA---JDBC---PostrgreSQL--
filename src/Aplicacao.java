@@ -1,4 +1,4 @@
-import view.TelaInicial;
+import control.TelaInicial;
 
 import javax.swing.*;
 
