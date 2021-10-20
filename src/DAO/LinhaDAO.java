@@ -3,7 +3,10 @@ package DAO;
 import conn.ConnDB;
 import model.Linha;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalTime;
 
 public class LinhaDAO {
