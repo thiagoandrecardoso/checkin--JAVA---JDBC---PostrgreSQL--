@@ -21,7 +21,17 @@ public class TelaInicial extends TelaInicialForm {
 
         SwingUtilities.invokeLater(() -> {
             TelaInfoBilhete telaInfoBilhete = new TelaInfoBilhete(bilhete);
-            telaInfoBilhete.setVisible(true);
+            final JDialog frame = new JDialog(telaInfoBilhete, "Info Bilhete", true);
+            frame.setSize(300, 250);
+            frame.setLocationRelativeTo(null);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            frame.getContentPane().setLayout(new BorderLayout());
+            frame.getContentPane().add(telaInfoBilhete.getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);
+            frame.getContentPane().add(telaInfoBilhete.getBilheteForm(), BorderLayout.CENTER);
+            frame.getContentPane().add(telaInfoBilhete.getPassageiroForm(), BorderLayout.PAGE_END);
+            frame.setResizable(false);
+
+            frame.setVisible(true);
         });
 
 

@@ -29,15 +29,9 @@ public abstract class TelaInfoBilheteForm extends JFrame {
     }
 
     private void inicializar() {
-        this.setTitle("Informações do bilhete");
-        this.setSize(300, 250);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.getContentPane().setLayout(new BorderLayout());
-        this.getContentPane().add(getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);
-        this.getContentPane().add(getBilheteForm(), BorderLayout.CENTER);
-        this.getContentPane().add(getPassageiroForm(), BorderLayout.PAGE_END);
-        this.setResizable(false);
+        getjPanelCAbecalhoForm();
+        getBilheteForm();
+        getPassageiroForm();
         event();
     }
 
