@@ -29,9 +29,9 @@ public abstract class TelaInfoBilheteForm extends JFrame {
     }
 
     private void inicializar() {
-        getjPanelCAbecalhoForm();
-        getBilheteForm();
-        getPassageiroForm();
+        jPanelCAbecalho =  getjPanelCAbecalhoForm();
+        jPanelInfoBilhete = getBilheteForm();
+        jPanelPassageiro = getPassageiroForm();
         event();
     }
 

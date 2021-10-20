@@ -26,11 +26,10 @@ public class TelaInicial extends TelaInicialForm {
             frame.setLocationRelativeTo(null);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.getContentPane().setLayout(new BorderLayout());
-            frame.getContentPane().add(telaInfoBilhete.getjPanelCAbecalhoForm(), BorderLayout.PAGE_START);
-            frame.getContentPane().add(telaInfoBilhete.getBilheteForm(), BorderLayout.CENTER);
-            frame.getContentPane().add(telaInfoBilhete.getPassageiroForm(), BorderLayout.PAGE_END);
+            frame.getContentPane().add(telaInfoBilhete.jPanelCAbecalho, BorderLayout.PAGE_START);
+            frame.getContentPane().add(telaInfoBilhete.jPanelInfoBilhete, BorderLayout.CENTER);
+            frame.getContentPane().add(telaInfoBilhete.jPanelPassageiro, BorderLayout.PAGE_END);
             frame.setResizable(false);
-
             frame.setVisible(true);
         });
 
