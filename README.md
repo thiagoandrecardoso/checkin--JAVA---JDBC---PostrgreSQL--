@@ -29,7 +29,7 @@
 - [X] O usuário seleciona o seu assento e seleciona "próximo";
 - [X] O sistema marca o assento para esse localizador do bilhete;
 - [X] O sistema exibe a mensagem "Cheking realizado com sucesso";
-- [ ] O sistema volta para a tela inicial.
+- [X] O sistema volta para a tela inicial.
 
 ### Alguns código de bilhete para teste
 
