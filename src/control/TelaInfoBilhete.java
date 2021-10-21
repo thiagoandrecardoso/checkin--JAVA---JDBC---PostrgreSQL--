@@ -19,4 +19,18 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm {
             telaAssento.setVisible(true);
         });
     }
+
+    @Override
+    public void editPassageiro(ActionEvent ev) {
+        if (btnAtualizarDadosPessoais.getText().equals("Editar")){
+            txtNome.setEditable(true);
+            txtCpf.setEditable(true);
+            btnAtualizarDadosPessoais.setText("Salvar");
+        } else if (btnAtualizarDadosPessoais.getText().equals("Salvar")){
+            txtNome.setEditable(false);
+            txtCpf.setEditable(false);
+            btnAtualizarDadosPessoais.setText("Editar");
+        }
+
+    }
 }
