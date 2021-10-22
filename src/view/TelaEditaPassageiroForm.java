@@ -16,6 +16,8 @@ public class TelaEditaPassageiroForm extends JFrame {
     public JTextField txtTelefone;
     public JTextField txtEmail;
 
+    public JButton btnSalvar;
+
     public TelaEditaPassageiroForm(Bilhete bilhete){
         this.bilhete = bilhete;
         inicializar();
@@ -28,6 +30,8 @@ public class TelaEditaPassageiroForm extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(getEditForm(), BorderLayout.CENTER);
+        btnSalvar = new JButton("Salvar");
+        this.getContentPane().add(btnSalvar, BorderLayout.PAGE_END);
         this.setResizable(false);
         event();
     }
