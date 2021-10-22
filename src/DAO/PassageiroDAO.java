@@ -15,6 +15,12 @@ public class PassageiroDAO {
         SELECT_BY_ID = "SELECT ID,NOME,CPF,TELEFONE_CONTATO,EMAIL FROM PASSAGEIRO WHERE ID=?";
     }
 
+    private final String UDPATE_PASSAGEIRO;
+
+    {
+        UDPATE_PASSAGEIRO = "UPDATE passageiro SET nome = ?, cpf = ?, telefone_contato = ?, email =? where id = ?";
+    }
+
     public Passageiro getPassengerById(int id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
