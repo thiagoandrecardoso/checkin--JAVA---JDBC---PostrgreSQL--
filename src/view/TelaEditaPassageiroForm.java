@@ -23,7 +23,7 @@ public class TelaEditaPassageiroForm extends JFrame {
 
     private void inicializar() {
         this.setTitle("Passageiro");
-        this.setSize(300, 200);
+        this.setSize(400, 200);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
@@ -54,6 +54,8 @@ public class TelaEditaPassageiroForm extends JFrame {
             jpPassageiro.add(new JLabel("email: "));
             txtEmail = new JTextField(bilhete.getPassageiro().getEmail());
             jpPassageiro.add(txtEmail);
+
+            jpPassageiro.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10));
         }
 
         return jpPassageiro;
