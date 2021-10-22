@@ -84,8 +84,6 @@ public abstract class TelaAssentosForm extends JFrame {
         if (jpButton == null) {
             jpButton = new JPanel();
             jbProximo = new JButton("Próximo");
-            Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-            jbProximo.setBorder(border);
             jpButton.add(jbProximo);
         }
         return jpButton;
