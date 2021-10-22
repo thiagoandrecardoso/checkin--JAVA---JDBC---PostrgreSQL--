@@ -5,8 +5,9 @@ import model.Passageiro;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
-public class TelaEditaPassageiroForm extends JFrame {
+public abstract class TelaEditaPassageiroForm extends JFrame {
     public Bilhete bilhete;
     public Passageiro passageiro;
 
@@ -18,7 +19,7 @@ public class TelaEditaPassageiroForm extends JFrame {
 
     public JButton btnSalvar;
 
-    public TelaEditaPassageiroForm(Bilhete bilhete){
+    public TelaEditaPassageiroForm(Bilhete bilhete) {
         this.bilhete = bilhete;
         inicializar();
     }
@@ -36,11 +37,14 @@ public class TelaEditaPassageiroForm extends JFrame {
         event();
     }
 
+    public abstract void salvar(ActionEvent ev);
+
     private void event() {
+        btnSalvar.addActionListener(this::salvar);
     }
 
-    public JPanel getEditForm(){
-        if (jpPassageiro == null){
+    public JPanel getEditForm() {
+        if (jpPassageiro == null) {
             jpPassageiro = new JPanel(new GridLayout(4, 2));
 
             jpPassageiro.add(new JLabel("Nome: "));

@@ -1,7 +1,6 @@
 package control;
 
 import model.Bilhete;
-import view.TelaEditaPassageiroForm;
 import view.TelaInfoBilheteForm;
 
 import javax.swing.*;
@@ -24,7 +23,7 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm {
     @Override
     public void editPassageiro(ActionEvent ev) {
         SwingUtilities.invokeLater(() -> {
-            TelaEditaPassageiroForm telaAssento = new TelaEditaPassageiroForm(bilhete);
+            TelaEditaPassageiro telaAssento = new TelaEditaPassageiro(bilhete);
             this.dispose();
             telaAssento.setVisible(true);
         });
