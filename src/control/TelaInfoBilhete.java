@@ -19,4 +19,13 @@ public class TelaInfoBilhete extends TelaInfoBilheteForm {
             telaAssento.setVisible(true);
         });
     }
+
+    @Override
+    public void editPassageiro(ActionEvent ev) {
+        SwingUtilities.invokeLater(() -> {
+            TelaEditaPassageiro telaAssento = new TelaEditaPassageiro(bilhete);
+            this.dispose();
+            telaAssento.setVisible(true);
+        });
+    }
 }

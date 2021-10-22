@@ -37,8 +37,11 @@ public abstract class TelaInfoBilheteForm extends JFrame {
 
     public abstract void btnProximo(ActionEvent e);
 
+    public abstract void editPassageiro(ActionEvent ev);
+
     private void event() {
         btnProximo.addActionListener(this::btnProximo);
+        btnAtualizarDadosPessoais.addActionListener(this::editPassageiro);
     }
 
     public JPanel getjPanelCAbecalhoForm() {
